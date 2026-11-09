@@ -1,5 +1,16 @@
 package icc.pap.pl1.patrones.prototype;
 
-public class Pizza {
-    
+import java.math.BigDecimal;
+import icc.pap.pl1.patrones.modelo.TipoProducto;
+
+public class Pizza extends ProductoBase {
+
+    public Pizza(String id) {
+        super(id, TipoProducto.PIZZA, "Pizza sencilla", new BigDecimal("5.00"));
+    }
+
+    @Override
+    public ProductoBase copiar(String nuevoId) {
+        return new Pizza(nuevoId);
+    }
 }

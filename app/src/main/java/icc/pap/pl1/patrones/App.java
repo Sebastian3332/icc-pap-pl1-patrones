@@ -3,12 +3,20 @@
  */
 package icc.pap.pl1.patrones;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+import icc.pap.pl1.patrones.vista.VentanaPedidos;
+
+public class App {
+public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            try {
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            } catch (Exception ignored) {}
+            
+            VentanaPedidos ventana = new VentanaPedidos();
+            ventana.setVisible(true);
+        });
     }
 }

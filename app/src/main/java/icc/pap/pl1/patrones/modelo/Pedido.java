@@ -1,5 +1,10 @@
 package icc.pap.pl1.patrones.modelo;
 
-public class Pedido {
-    
+import java.math.BigDecimal;
+
+public interface Pedido {
+    String getId();
+    TipoProducto getTipo();
+    String getDescripcion();
+    BigDecimal getPrecio();
 }
